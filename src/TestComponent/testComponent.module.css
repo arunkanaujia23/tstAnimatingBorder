@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.inputContainer {
+  padding: 8px 10px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  position: relative;
+}
+
+.inputContainer::after,
+.inputContainer::before {
+  border: 0 solid transparent;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.inputContainer::before {
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+.inputContainer::after {
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+
+.inputContainer.focused {
+  border: transparent 1px solid;
+  transition: all 0.4s ease;
+}
+
+.inputContainer.focused:before,
+.inputContainer.focused:after {
+  border-color: #e22424;
+  border-radius: 0.375rem;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: calc(100% - 0px);
+  height: calc(100% - 0px);
+}
+.inputContainer.focused:before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.inputContainer.focused:after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.input {
+  outline: 0;
+  border: 0;
+}
+.inputButton {
+    line-height: 18px;
+    border-radius: 4px;
+    border: none;
+    background: linear-gradient(180deg, rgba(18, 20, 26, 0.5) 0%, rgba(63, 66, 75, 0.5) 100%);
+    color: #fff;
+    border-radius: 0.25rem;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-family: Inter;
+    font-weight: 500;
+    transition: border 0.3s ease;
+    cursor: not-allowed;
+    
+
+}
